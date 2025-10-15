@@ -66,5 +66,26 @@ while(num1 !== 0){
     num1 = Math.floor(num1/10);
     count++;
 }
-
 console.log(count);
+
+// Print single digit of the Number
+
+let number = 12431135;
+let number1 = number;
+
+let count1 = 0;
+
+while(number1 !== 0){
+    number1 = Math.floor(number1/10);
+    count1++;
+}
+
+let div = Math.pow(10,count1-1);
+
+while(div !== 0){
+    let quetioent = Math.floor(number/div);
+    console.log(quetioent);
+    number = number % div;
+    div = Math.floor(div / 10);
+}
+
