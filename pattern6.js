@@ -1,19 +1,26 @@
-//   *
-//  ***
-// *****
-//  ***
-//   *
-// n = 5
+// *** ***
+// **   **
+// *     *
+// **   **
+// *** ***
+// N = 5
+
 
 let n = 5;
 let row = 1;
-let nst = row;
-let nsp = Math.floor(n/2);
+let nsp = 1;
+let nst = Math.floor(n/2) + 1;
 
 while(row <= n){
+    
     let col = 1;
     let pattern = "";
+    while(col <= nst){
+        pattern += "*";
+        col++;
+    }
 
+    col = 1;
     while(col <= nsp){
         pattern += " ";
         col++;
@@ -24,15 +31,15 @@ while(row <= n){
         pattern += "*";
         col++;
     }
-
+    
     console.log(pattern);
+
     if(row <= Math.floor(n/2)){
-        nsp--;
-        nst = nst+2;
+        nsp += 2;
+        nst--;
     }else{
-        nsp++;
-        nst = nst-2;
+        nsp -= 2;
+        nst++;
     }
     row++;
-
 }
